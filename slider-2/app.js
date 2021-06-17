@@ -7,7 +7,14 @@ let slideCount = mainSlide.querySelectorAll('div').length
 let activeSlideIndex = 0
 
 sidebar.style.top = `-${(slideCount - 1) * 100}vh`
-
+document.addEventListener('keydown', event => {
+  
+  if (event.key === 'ArrowDown') {
+    changeSlide('down')
+  } else if (event.key === 'ArrowUp') {
+    changeSlide('up')
+  }
+})
 upBtn.addEventListener('click', () => {
   changeSlide('up')
 })
